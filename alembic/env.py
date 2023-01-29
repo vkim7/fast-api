@@ -14,7 +14,7 @@ config = context.config
 # Format(same as in database): driver://user:pass@localhost/dbname
 config.set_main_option(
     'sqlalchemy.url',
-    f'postgresql://{settings.DB_USERNAME}@{settings.DB_HOSTNAME}:{settings.DB_PORT}/{settings.DB_NAME}'
+    f'postgresql://{settings.DB_USERNAME}:{settings.DB_PASSWORD}@{settings.DB_HOSTNAME}:{settings.DB_PORT}/{settings.DB_NAME}'
 )
 
 # Interpret the config file for Python logging.
