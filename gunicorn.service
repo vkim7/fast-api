@@ -1,0 +1,13 @@
+[Unit]
+Description=demo
+After=network.target
+
+[Service]
+User=vladimir
+Group=vladimir
+WorkingDirectory=/home/vladimir/app/src/
+Environment="PATH=/home/vladimir/app/venv/bin"
+ExecStart=/home/vladimir/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
