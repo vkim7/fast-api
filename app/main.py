@@ -32,3 +32,8 @@ app.include_router(post.posts_router)
 app.include_router(user.users_router)
 app.include_router(vote.votes_router)
 app.include_router(auth.router)
+
+
+@app.get('/')
+def root():
+    return {'message': 'Hello World!!!'}
